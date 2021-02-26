@@ -1,21 +1,29 @@
-<div class="text-center">
-  <br><br><br><br><br><br><br>
+<div class="text">
   <form class="form-signin">
     <h1 class="h3 mb-3 font-weight-normal">Register to Apple Store</h1>
-    <label for="inputEmail" class="sr-only">Apple ID</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+    <label for="inputFirstName">First Name</label>
+    <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" required="" autofocus="">
+    <label for="inputLastName">Last Name</label>
+    <input type="text" id="inputLastName" class="form-control" placeholder="Last Name" required="" autofocus="">
+    <label for="inputEmail">Apple ID</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+    <label for="inputPassword1">Password</label>
+    <input type="password" id="inputPassword1" class="form-control" placeholder="Password" required="">
+    <label for="inputPassword2">Password</label>
+    <input type="password" id="inputPassword2" class="form-control" placeholder="Password confirm" required="">
+    <label for="inputPhone">Phone number</label>
+    <input type="text" id="inputPhone" class="form-control" placeholder="Phone number" required="" autofocus="">
     <br>
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button type="submit" class="btn btn-secondary btn-lg">Sign in</button>
+    <div class="buttons">
+    <a class="btn btn-outline-secondary" routerLink="../layout">Register</a>
     <hr>
-    <p><small><a href="#">Forgot Apple ID or password?</a></small></p>
-    <p><small>Don’t have an Apple ID? <a href="#">Create yours now.</a></small></p>
+    <p><small>Already have an Apple ID. <a routerLink="../layout">Log in.</a></small></p>
+    </div>
   </form>
   <br><br><br>
 </div>

@@ -10,6 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DevicesComponent } from './devices/devices.component';
+import { MacComponent } from './devices/mac/mac.component';
+import { IphoneComponent } from './devices/iphone/iphone.component';
+import { WatchComponent } from './devices/watch/watch.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { FormsModule } from '@angular/forms';
     LayoutComponent,
     LoginComponent,
     RegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent,
+    WelcomeComponent,
+    DevicesComponent,
+    MacComponent,
+    IphoneComponent,
+    WatchComponent
   ],
     imports: [
         BrowserModule,

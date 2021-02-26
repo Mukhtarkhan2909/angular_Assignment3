@@ -1,56 +1,24 @@
-<!--<nav class="navbar fixed-top navbar-dark bg-dark">-->
-<!--  <div class="container">-->
-<!--    <a class="navbar-brand" href="#">-->
-<!--      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"-->
-<!--           alt="" style="height: 30px; width: 30px;">-->
-<!--    </a>-->
-<!--    <a class="nav-link" href="#">Mac</a>-->
-<!--    <a class="nav-link" href="#">iPad</a>-->
-<!--    <a class="nav-link" href="#">iPhone</a>-->
-<!--    <a class="nav-link" href="#">Watch</a>-->
-<!--    <a class="nav-link" href="#">TV</a>-->
-<!--    <a class="nav-link" href="#">Music</a>-->
-<!--    <a class="nav-link" href="#">Support</a>-->
-<!--    <a class="navbar-brand" href="#">-->
-<!--    <img src="https://secureservercdn.net/160.153.137.210/04a.282.myftpupload.com/wp-content/themes/mobius/img/img/search_icon.png"-->
-<!--         alt="" style="height: 30px; width: 30px;">-->
-<!--    </a>-->
-<!--    <a class="navbar-brand" href="#">-->
-
-<!--    <img src="https://i.pinimg.com/originals/09/88/dc/0988dc27ab24d196b91d085c786c292d.png"-->
-<!--         alt="" style="height: 30px; width: 30px;">-->
-<!--    </a>-->
-<!--    <div class="dropdown">-->
-<!--      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example-->
-<!--        <span class="caret"></span></button>-->
-<!--      <ul class="dropdown-menu">-->
-<!--        <li><a href="#">HTML</a></li>-->
-<!--        <li><a href="#">CSS</a></li>-->
-<!--        <li><a href="#">JavaScript</a></li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
 <nav class="navbar fixed-top navbar-dark bg-dark">
   <div class="container d-flex flex-column flex-md-row justify-content-between">
     <a class="py-2" href="#">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
            alt="" style="height: 30px; width: 30px;">
     </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Mac</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">iPad</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">iPhone</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Watch</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">TV</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Music</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">
+    <a class="py-2 d-none d-md-inline-block" routerLink="welcome" >Main</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="layout" >Login</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="registration" >Registration</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="home" >Home</a>
+    <a class="py-2 d-none d-md-inline-block" routerLink="devices" >Devices</a>
+    <a class="py-2 d-none d-md-inline-block">Services</a>
+    <a class="py-2 d-none d-md-inline-block">Support</a>
+    <a class="py-2 d-none d-md-inline-block">
       <img src="https://secureservercdn.net/160.153.137.210/04a.282.myftpupload.com/wp-content/themes/mobius/img/img/search_icon.png"
            alt="" style="height: 30px; width: 30px;">
     </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">
+    <a class="py-2 d-none d-md-inline-block">
       <img src="https://i.pinimg.com/originals/09/88/dc/0988dc27ab24d196b91d085c786c292d.png"
            alt="" style="height: 30px; width: 30px;">
     </a>
   </div>
 </nav>
+<router-outlet></router-outlet>

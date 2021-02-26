@@ -10,9 +10,10 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <a class="btn btn-outline-secondary" (click)="userEvent(email.value, password.value)">Sign in</a>
+    <a class="btn btn-outline-secondary" (click)="userEvent(email.value, password.value)" routerLink="../layout">Sign in</a>
     <hr>
     <p><small><a href="#">Forgot Apple ID or password?</a></small></p>
-    <p><small>Don’t have an Apple ID? <a href="#">Create yours now.</a></small></p>
+    <p><small>Don’t have an Apple ID? <a routerLink="../registration">Create yours now.</a></small></p>
   </form>
 </div>
+<router-outlet></router-outlet>
