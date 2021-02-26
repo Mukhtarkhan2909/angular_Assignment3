@@ -1,0 +1,13 @@
+<div *ngIf="user; else loggedIn">
+  <app-home
+    [users]="user"
+    (newEvent)="addUser($event)">
+  </app-home>
+</div>
+<ng-template #loggedIn>
+  <app-login
+    (newEvent)="addUser($event)">
+  </app-login>
+</ng-template>
+
+
