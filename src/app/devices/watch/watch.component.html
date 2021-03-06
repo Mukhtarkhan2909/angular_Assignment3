@@ -2,113 +2,29 @@
   <div class="container">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
+      <div class="col" *ngFor="let device of devices">
         <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
           <div class="card-body">
-            <h1 class="display-6">iPhone 5</h1>
+            <h3>{{device.name | uppercase}}</h3>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
               </div>
-              <small class="text-muted">50 000 Tg</small>
+            </div>
+            <div class="prices">
+              <small>{{device.price | currency}}</small><br>
+              <small>&#8376;{{device.price | customPipe: 'kzt' | number: '1.2-2'}}</small><br>
+              <small>&#8381;{{device.price | customPipe: 'rub' | number: '1.2-2'}}</small>
             </div>
           </div>
+          <div [ngClass]="{
+    'cheap':device.price < 100,
+    'medium':device.price >= 100 && device.price <= 200,
+    'expensive':device.price > 200
+  }"></div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
-          <div class="card-body">
-            <h1 class="display-6">iPhone 6</h1>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
-              </div>
-              <small class="text-muted">80 000 Tg</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
-          <div class="card-body">
-            <h1 class="display-6">iPhone 7</h1>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
-              </div>
-              <small class="text-muted">100 000 Tg</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
-          <div class="card-body">
-            <h1 class="display-6">iPhone 8</h1>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
-              </div>
-              <small class="text-muted">130 000 Tg</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
-          <div class="card-body">
-            <h1 class="display-6">iPhone 9</h1>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
-              </div>
-              <small class="text-muted">150 000 Tg</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225">
-            <title>iPhone 5</title>
-          </svg>
-
-          <div class="card-body">
-            <h1 class="display-6">iPhone 10</h1>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
-              </div>
-              <small class="text-muted">200 000 Tg</small>
-            </div>
-          </div>
-        </div>
+        <br>
       </div>
     </div>
   </div>

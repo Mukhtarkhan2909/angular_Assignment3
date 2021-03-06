@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {watch} from '../devices';
 
 @Component({
   selector: 'app-watch',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WatchComponent implements OnInit {
 
+  devices = watch;
   constructor() { }
 
   ngOnInit(): void {

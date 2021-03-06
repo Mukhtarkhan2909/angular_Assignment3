@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DeviceDetail} from '../devices';
+import {iPhone} from '../devices';
 
 @Component({
   selector: 'app-iphone',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IphoneComponent implements OnInit {
 
+  devices = iPhone;
   constructor() { }
 
   ngOnInit(): void {

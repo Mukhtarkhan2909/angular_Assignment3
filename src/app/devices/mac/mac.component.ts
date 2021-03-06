@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {mac} from '../devices';
 
 @Component({
   selector: 'app-mac',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MacComponent implements OnInit {
 
+  devices = mac;
   constructor() { }
 
   ngOnInit(): void {

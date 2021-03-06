@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DevicesComponent } from './devices/devices.component';
+import { LoginComponent } from './login/login.component';
 import { MacComponent } from './devices/mac/mac.component';
 import { WatchComponent } from './devices/watch/watch.component';
 import {IphoneComponent} from './devices/iphone/iphone.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'registration', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'devices', component: DevicesComponent,
     children: [
       {path: 'mac', component: MacComponent},
