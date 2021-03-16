@@ -1,4 +1,4 @@
-<div *ngIf="user; else loggedIn">
+<div *ngIf="user.logged; else loggedIn">
   <app-home
     [users]="user"
     (newEvent)="addUser($event)">

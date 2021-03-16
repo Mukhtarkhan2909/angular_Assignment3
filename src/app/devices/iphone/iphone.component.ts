@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DeviceDetail} from '../devices';
-import {iPhone} from '../devices';
+import { DeviceDetail } from '../../services/devices';
+import { DevicesService } from '../../services/devices.service';
+import { BasketdevicesService } from '../../services/basketdevices.service';
 
 @Component({
   selector: 'app-iphone',
@@ -9,10 +10,22 @@ import {iPhone} from '../devices';
 })
 export class IphoneComponent implements OnInit {
 
-  devices = iPhone;
-  constructor() { }
+  devices: DeviceDetail[] = [];
+
+  constructor(private devicesService: DevicesService,
+              private basketDevicesService: BasketdevicesService) { }
 
   ngOnInit(): void {
+    this.getDevices();
+  }
+
+  toBasket(device: DeviceDetail): void {
+    this.basketDevicesService.add(device);
+  }
+
+  getDevices(): void {
+    this.devicesService.getIPhones()
+      .subscribe(devices => this.devices = devices);
   }
 
 }

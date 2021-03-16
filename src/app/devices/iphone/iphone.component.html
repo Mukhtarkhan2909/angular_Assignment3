@@ -8,8 +8,8 @@
             <h3>{{device.name | uppercase}}</h3>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary"
+                        (click)="toBasket(device)">To basket</button>
               </div>
             </div>
             <div class="prices">

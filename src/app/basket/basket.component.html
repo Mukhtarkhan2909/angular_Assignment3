@@ -1,0 +1,60 @@
+<div *ngIf="user.logged; else loggedIn">
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Basket</h1>
+          <p class="lead text-muted">
+            Devices in the shopping basket.
+          </p>
+          <p>
+            <a class="btn btn-secondary my-2"
+               (click)="basketDevicesService.clear()">Clear basket</a>&nbsp;
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col" *ngFor="let device of basketDevicesService.basketDevices">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h3>{{device.name | uppercase}}</h3>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">To basket</button>
+                  </div>
+                </div>
+                <div class="prices">
+                  <small>{{device.price | currency}}</small><br>
+                  <small>&#8376;{{device.price | customPipe: 'kzt' | number: '1.2-2'}}</small><br>
+                  <small>&#8381;{{device.price | customPipe: 'rub' | number: '1.2-2'}}</small>
+                </div>
+              </div>
+              <div [ngClass]="{
+    'cheapPhone':device.price < 350 && device.type == 'phone',
+    'mediumPhone':device.price >= 350 && device.price <= 550 && device.type == 'phone',
+    'expensivePhone':device.price > 550 && device.type == 'phone',
+    'cheapLaptop':device.price < 1000 && device.type == 'laptop',
+    'mediumLaptop':device.price >= 1000 && device.price <= 15000 && device.type == 'laptop',
+    'expensiveLaptop':device.price > 1500 && device.type == 'laptop',
+    'cheapWatch':device.price < 100 && device.type == 'watch',
+    'mediumWatch':device.price >= 100 && device.price <= 200 && device.type == 'watch',
+    'expensiveWatch':device.price > 200 && device.type == 'watch'
+  }"></div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+<ng-template #loggedIn>
+  <app-login></app-login>
+</ng-template>

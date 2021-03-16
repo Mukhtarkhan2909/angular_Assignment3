@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {UserDetail} from '../layout/userDetails';
+import {UserDetail} from '../services/userDetails';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,22 @@ import {UserDetail} from '../layout/userDetails';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  logged = false;
-  user!: UserDetail;
 
+  constructor(private userService: UserService) { }
+  logged = false;
+  password = '';
+  email = '';
+  user!: UserDetail;
   @Output() newEvent = new EventEmitter<UserDetail>();
-  userEvent(email: string, password: string): void {
-    this.user = {
-      email,
-      password,
-      logged: !this.logged
-    };
-    this.newEvent.emit(this.user);
-  }
-  constructor() { }
   ngOnInit(): void {
+  }
+  userEvent(e: string, p: string): void {
+    this.user = {
+      email: e,
+      password: p,
+      logged: true
+    };
+    this.userService.add(this.user);
+    this.newEvent.emit(this.user);
   }
 }

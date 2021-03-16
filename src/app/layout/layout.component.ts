@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserDetail} from './userDetails';
+import { UserDetail} from '../services/userDetails';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-layout',
@@ -8,11 +9,11 @@ import {UserDetail} from './userDetails';
 })
 export class LayoutComponent implements OnInit {
 
-  user!: UserDetail;
+  user: UserDetail = this.userService.getUser();
   addUser(newUser: UserDetail): void {
     this.user = newUser;
   }
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }

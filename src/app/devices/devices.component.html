@@ -1,22 +1,27 @@
-<main>
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Devices</h1>
-        <p class="lead text-muted">
-          Apple has different kind of devices.
-        </p>
-        <p class="lead text-muted">
-          Choose any kind and enjoy.
-        </p>
-        <p>
-          <a routerLink="mac" class="btn btn-secondary my-2">MacBook</a>&nbsp;
-          <a routerLink="iphone" class="btn btn-secondary my-2">iPhone</a>&nbsp;
-          <a routerLink="watch" class="btn btn-secondary my-2">Watch</a>
-        </p>
+<div *ngIf="user.logged; else loggedIn">
+  <main>
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Devices</h1>
+          <p class="lead text-muted">
+            Apple has different kind of devices.
+          </p>
+          <p class="lead text-muted">
+            Choose any kind and enjoy.
+          </p>
+          <p>
+            <a routerLink="mac" class="btn btn-secondary my-2">MacBook</a>&nbsp;
+            <a routerLink="iphone" class="btn btn-secondary my-2">iPhone</a>&nbsp;
+            <a routerLink="watch" class="btn btn-secondary my-2">Watch</a>
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <router-outlet></router-outlet>
-</main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<ng-template #loggedIn>
+  <app-login></app-login>
+</ng-template>

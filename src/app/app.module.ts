@@ -17,6 +17,7 @@ import { MacComponent } from './devices/mac/mac.component';
 import { IphoneComponent } from './devices/iphone/iphone.component';
 import { WatchComponent } from './devices/watch/watch.component';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CustomPipePipe } from './pipes/custom-pipe.pipe';
     MacComponent,
     IphoneComponent,
     WatchComponent,
-    CustomPipePipe
+    CustomPipePipe,
+    BasketComponent
   ],
     imports: [
         BrowserModule,

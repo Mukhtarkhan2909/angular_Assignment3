@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {UserDetail} from '../layout/userDetails';
+import {UserDetail} from '../services/userDetails';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,12 @@ export class HomeComponent implements OnInit {
   @Input() users!: UserDetail;
   user!: UserDetail;
   @Output() newEvent = new EventEmitter<UserDetail>();
+  loggedUser = this.userService.getUser();
   logOut(): void {
+    this.userService.delete();
     this.newEvent.emit(this.user);
   }
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
