@@ -1,25 +1,21 @@
-import { Injectable } from '@angular/core';
-import {BasketdevicesService} from './basketdevices.service';
-import { Observable, of } from 'rxjs';
-import { DeviceDetail, iPhone, mac, watch } from './devices';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
+import {DeviceDetail, iPhone, mac, watch} from './devices';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DevicesService {
 
-  constructor(private basketDevicesService: BasketdevicesService) { }
+  constructor() { }
 
   getIPhones(): Observable<DeviceDetail[]> {
-    const p = of(iPhone);
-    return p;
+    return of(iPhone);
   }
   getMacs(): Observable<DeviceDetail[]> {
-    const m = of(mac);
-    return m;
+    return of(mac);
   }
   getWatches(): Observable<DeviceDetail[]> {
-    const w = of(watch);
-    return w;
+    return of(watch);
   }
 }
