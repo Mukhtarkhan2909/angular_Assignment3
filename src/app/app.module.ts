@@ -18,6 +18,8 @@ import { IphoneComponent } from './devices/iphone/iphone.component';
 import { WatchComponent } from './devices/watch/watch.component';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { BasketComponent } from './basket/basket.component';
+import {HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { BasketComponent } from './basket/basket.component';
     IphoneComponent,
     WatchComponent,
     CustomPipePipe,
-    BasketComponent
+    BasketComponent,
+    AdminComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

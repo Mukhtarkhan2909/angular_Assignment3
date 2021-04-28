@@ -11,6 +11,7 @@ import { MacComponent } from './devices/mac/mac.component';
 import { WatchComponent } from './devices/watch/watch.component';
 import { IphoneComponent } from './devices/iphone/iphone.component';
 import { BasketComponent } from './basket/basket.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
     ]},
   {path: 'layout', component: LayoutComponent},
   {path: 'basket', component: BasketComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: '**', component: ErrorComponent}
 ];
