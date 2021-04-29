@@ -1,22 +1,2 @@
-<div *ngIf="admin.logged; else loggedIn">
-  <main>
-    <section class="py-5 text-center container">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Admin page</h1>
-          <hr>
-          <p>
-            <a routerLink="add" class="btn btn-secondary my-2">Add device</a>&nbsp;
-            <a routerLink="delete" class="btn btn-secondary my-2">Delete device</a>&nbsp;
-            <a routerLink="update" class="btn btn-secondary my-2">Update device</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <router-outlet></router-outlet>
-  </main>
-</div>
-<ng-template #loggedIn>
-  <app-login></app-login>
-</ng-template>
+<h1>Manage devices</h1>
+<app-manage-devices></app-manage-devices>

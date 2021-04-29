@@ -1,39 +1,46 @@
 {
-  "posts": [
+  "devices": [
     {
       "id": 1,
-      "title": "AngularJS (1.0.0)",
-      "releaseDate": "June 14th, 2012"
+      "name": "iPhone 12",
+      "price": 450000,
+      "type": "phone"
     },
     {
       "id": 2,
-      "title": "Angular 2",
-      "releaseDate": "September 14, 2016"
+      "name": "iPhone 11",
+      "price": 400000,
+      "type": "phone"
     },
     {
       "id": 3,
-      "title": "Angular 4",
-      "releaseDate": "March 23, 2017"
+      "name": "iPhone 10",
+      "price": 350000,
+      "type": "phone"
     },
     {
       "id": 4,
-      "title": "Angular 5",
-      "releaseDate": "November 1, 2017"
+      "name": "Macbook Air",
+      "price": 600000,
+      "type": "laptop"
     },
     {
       "id": 5,
-      "title": "Angular 6",
-      "releaseDate": "May 4th, 2018"
+      "name": "Macbook pro",
+      "price": 800000,
+      "type": "laptop"
     },
     {
       "id": 6,
-      "title": "Angular 7",
-      "releaseDate": "October 18, 2018"
+      "name": "Apple watch SE",
+      "price": 100000,
+      "type": "watch"
     },
     {
-      "id": 6,
-      "title": "Angular 8",
-      "releaseDate": "May 28, 2019"
+      "id": 7,
+      "name": "Apple watch",
+      "price": 150000,
+      "type": "watch"
     }
   ]
 }

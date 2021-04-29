@@ -19,8 +19,8 @@ import { WatchComponent } from './devices/watch/watch.component';
 import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { BasketComponent } from './basket/basket.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AdminComponent } from './admin/admin.component';
-
+import {AdminModule} from './admin/admin.module';
+import {AdminActivateService} from './services/admin-activate.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,16 +37,19 @@ import { AdminComponent } from './admin/admin.component';
     IphoneComponent,
     WatchComponent,
     CustomPipePipe,
-    BasketComponent,
-    AdminComponent
+    BasketComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    AdminModule
+  ],
+  providers: [AdminActivateService],
+  exports: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

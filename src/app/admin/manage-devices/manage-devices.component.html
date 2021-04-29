@@ -1,0 +1,36 @@
+<div class="container">
+  <main>
+    <br>
+    <h2>Manage devices</h2>
+    <hr>
+    <div class="search">
+      <form #contactForm="ngForm" (ngSubmit)="add(deviceName.value); deviceName.value=''">
+        <label for="device-name">Device name: </label>
+        <input type="text" #deviceName id="device-name" required maxlength="15">
+        <br>
+        <label for="device-price">Device price: </label>
+        <input type="number" #devicePrice id="device-price" required>
+
+        <button type="submit">
+          Add device
+        </button>
+      </form>
+    </div>
+
+    <ul class="devices">
+      <li *ngFor="let device of devices">
+        <a (click)="edit(device)">
+          <span class="badge">{{ device.id || -1 }}</span>
+          <span *ngIf="device!==editDevice">{{device.name}}</span>
+          <input type="text"
+                 *ngIf="device===editDevice"
+                 [(ngModel)]="device.name"
+                 (blur)="update()"
+                 (keyup.enter)="update()">
+        </a>
+        <button class="delete" title="delete hero"
+                (click)="delete(device)">x</button>
+      </li>
+    </ul>
+  </main>
+</div>

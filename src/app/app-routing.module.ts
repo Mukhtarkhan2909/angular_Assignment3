@@ -11,7 +11,8 @@ import { MacComponent } from './devices/mac/mac.component';
 import { WatchComponent } from './devices/watch/watch.component';
 import { IphoneComponent } from './devices/iphone/iphone.component';
 import { BasketComponent } from './basket/basket.component';
-import { AdminComponent } from './admin/admin.component';
+import {AdminComponent} from './admin/admin.component';
+import {AdminActivateService} from './services/admin-activate.service';
 
 const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
@@ -26,7 +27,8 @@ const routes: Routes = [
     ]},
   {path: 'layout', component: LayoutComponent},
   {path: 'basket', component: BasketComponent},
-  {path: 'admin', component: AdminComponent},
+  {path: 'admin', component: AdminComponent,
+    canActivate: [AdminActivateService]},
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: '**', component: ErrorComponent}
 ];
